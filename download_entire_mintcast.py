@@ -13,7 +13,7 @@ pages = [main_page_url, 'http://mintcast.org/page/1/']
 file_format = '.ogg'
 download_everything_at_once = False
 
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 
 def search_for_pages(url):
 	opener = urllib.urlopen(url)
@@ -76,7 +76,7 @@ if __name__ == '__main__':
 			download_everything_at_once = True					
 
 	
-	print "Finding pages..."
+	print "Finding pages... (this may take a while)"
 	search_for_pages(main_page_url)
 	for page in pages:
 		search_and_download(page)

@@ -38,9 +38,9 @@ def search_and_download(url):
 	for link in soup.find_all('a'):
     		a_tag_string = link.get('string')
     		a_tag_url = link.get('href')
-		if not(a_tag_url == None): a_tag_url = a_tag_url.replace('https://', 'http://')
+		
 		if not(a_tag_url == None):
-
+			a_tag_url = a_tag_url.replace('https://', 'http://')
 	  	  	if a_tag_url.endswith(file_format):
 				filename_to_save = basename(urlparse(a_tag_url).path)
 				print 'downloading ' + filename_to_save + "..."

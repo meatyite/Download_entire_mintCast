@@ -23,11 +23,10 @@ def search_for_pages(url):
 		a_tag_url = link.get('href')
 		if not(a_tag_url == None):
 			a_tag_url = a_tag_url.replace('https://', 'http://')
-			if a_tag_url.startswith('http://mintcast.org/page/'):
-				if not(a_tag_url in pages):
-					pages.append(a_tag_url)
-					print "found page: " + a_tag_url
-					search_for_pages(a_tag_url)
+			if a_tag_url.startswith('http://mintcast.org/page/') and not(a_tag_url in pages):
+				pages.append(a_tag_url)
+				print "found page: " + a_tag_url
+				search_for_pages(a_tag_url)
 
 def search_and_download(url):
 

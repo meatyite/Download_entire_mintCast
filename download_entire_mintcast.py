@@ -26,7 +26,7 @@ def search_for_pages(url):
 			if a_tag_url.startswith('http://mintcast.org/page/') and not(a_tag_url in pages):
 				pages.append(a_tag_url)
 				print "found page: " + a_tag_url
-				Thread(target=search_for_pages, args=(a_tag_url,)).start()
+				search_for_pages(a_tag_url)
 
 def search_and_download(url):
 
